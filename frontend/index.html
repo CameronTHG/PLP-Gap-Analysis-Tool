@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Topic Gap Analysis Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SEO Topic Gap Analysis Tool</h1>
+        <div class="api-key-container">
+            <label for="api-key">Gemini API Key</label>
+            <input type="password" id="api-key" placeholder="Enter your Gemini API key">
+        </div>
+        <div class="steps">
+            <div class="step">
+                <h2>Step 1: Upload Existing Pages & Keywords CSV</h2>
+                <input type="file" id="existing-pages-file" accept=".csv">
+            </div>
+            <div class="step">
+                <h2>Step 2: Upload Full Topic Attack List CSV</h2>
+                <input type="file" id="topic-attack-file" accept=".csv">
+            </div>
+        </div>
+        <button id="find-opportunities-btn" disabled>Find Opportunities</button>
+        <div class="loader-container" style="display:none;">
+            <div class="loader"></div>
+            <p>Analyzing keywords... This may take a few moments.</p>
+        </div>
+        <button id="download-csv-btn" style="display:none;">Download Opportunities CSV</button>
+        <div class="analysis-logic">
+            <h2>How the Analysis Works</h2>
+            <p>This tool analyzes your keyword lists to find SEO opportunities. Here's a summary:</p>
+            <ul>
+                <li><strong>Optimise Existing:</strong> For content ranking between positions 5-20.</li>
+                <li><strong>Create New Page:</strong> For content ranking below position 20 or for new keyword gaps.</li>
+                <li><strong>No Action:</strong> For content already ranking in the top 4.</li>
+            </ul>
+            <a href="#" id="read-more-link">Read more</a>
+            <div id="detailed-logic" style="display:none;">
+                <p><strong>Keyword Consolidation:</strong> First, the tool analyzes your "Full Topic Attack List" and groups semantically similar keywords together using AI-powered embeddings. For each group, it sums up their search volumes and picks the keyword with the highest individual volume as the main representative for that group. This prevents suggesting actions for many minor variations of the same core topic.</p>
+                <p><strong>Semantic Matching:</strong> Next, it compares each consolidated main keyword against your "Existing Pages & Keywords" list to find the best semantic match, even if the wording isn't identical.</p>
+                <p><strong>Action Logic:</strong> Based on how closely the topic matches your existing content and the ranking position of that content, it recommends one of the following actions:</p>
+                <ul>
+                    <li><strong>Optimise Existing:</strong> This is suggested if a strong semantic match is found and your existing page for that topic ranks between positions 5 and 20.</li>
+                    <li><strong>Create New Page:</strong> This is suggested in two scenarios:
+                        <ul>
+                            <li>If a strong semantic match is found, but the existing page ranks below position 20.</li>
+                            <li>If no strong semantic match is found in your existing content, indicating a content gap.</li>
+                        </ul>
+                    </li>
+                    <li><strong>No Action:</strong> If a strong match is found and the page is already ranking in the top 4 positions, no action is recommended as it's already performing well.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="upload-requirements">
+            <h2>CSV Upload Requirements</h2>
+            <p>For the tool to work correctly, your CSV files must contain specific columns.</p>
+            <div class="step-requirements">
+                <h3>Step 1: Existing Pages & Keywords CSV</h3>
+                <p>This file must include the following columns:</p>
+                <ul>
+                    <li><code>Keyword</code></li>
+                    <li><code>Current position</code></li>
+                    <li><code>Current URL</code></li>
+                </ul>
+            </div>
+            <div class="step-requirements">
+                <p><strong>TIP:</strong> Use an SEO tool to get clean data. For example, in Ahrefs, you can find this by going to <em>Site Explorer &gt; Organic Keywords</em> and exporting the list.</p>
+                <h3>Step 2: Full Topic Attack List CSV</h3>
+                <p>This file must include the following columns:</p>
+                <ul>
+                    <li><code>Keyword</code></li>
+                    <li><code>Volume</code></li>
+                </ul>
+            </div>
+                <div class="tip">
+                    <p><strong>TIP:</strong> Use an SEO tool like Ahrefs' <em>Keyword Explorer</em> to export full topics and get a view of what's out there to potentially target. You can also pre-filter your upload for brand/non-brand, informational, transactional, etc. for cleaner outputs.</p>
+                </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 0;
+    margin: 0;
+}
+
+.container {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.api-key-container {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.api-key-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e0e0e0;
+}
+
+#api-key {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 4px;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.step {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+}
+
+h2 {
+    font-size: 1.1em;
+    margin-top: 0;
+    color: #e0e0e0;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed #444;
+    background-color: #333;
+    color: #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #0056b3;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background-color: #555;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+.loader-container {
+    margin-top: 20px;
+    color: #e0e0e0;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#download-csv-btn {
+    background-color: #28a745;
+}
+
+#download-csv-btn:hover {
+    background-color: #218838;
+}
+.analysis-logic {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.analysis-logic h2 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.analysis-logic p {
+    margin-bottom: 15px;
+}
+
+.analysis-logic ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.analysis-logic li {
+    margin-bottom: 10px;
+}
+
+#read-more-link {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#read-more-link:hover {
+    text-decoration: underline;
+}
+
+#detailed-logic {
+    margin-top: 15px;
+    text-align: left;
+}
+
+#detailed-logic ul {
+    list-style-type: disc;
+    padding-left: 40px;
+}
+
+#detailed-logic ul ul {
+    list-style-type: circle;
+}
+
+.upload-requirements {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.upload-requirements h2 {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.upload-requirements p {
+    margin-bottom: 15px;
+}
+
+.upload-requirements ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.upload-requirements li {
+    margin-bottom: 10px;
+}
+
+.step-requirements {
+    margin-top: 20px;
+}
+
+.step-requirements h3 {
+    color: #e0e0e0;
+}
+
+.step-requirements code {
+    background-color: #333;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.step-requirements em {
+    font-style: italic;
+    color: #cccccc;
+}
